@@ -1,0 +1,51 @@
+<!doctype html> 
+<html lang = "en">
+
+<head>
+    <meta charset = "UTF-8">
+    <title> another boring example i have to learn to earn good money one day
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style type="text/css">
+        div.idk {
+            margin: 10px 0 20px 0;
+        }
+    </style>
+    <script>
+        function somethang() {
+           let targetnum = $("#justnum").val();
+
+           if (targetnum == '') {
+            alert('Insert a number bruh wyd');
+            return;
+           }
+
+           let targetUrl = 'http://numbersapi.com/' + targetnum;
+           $.ajax({
+            type: "GET",
+            url: targetUrl,
+            data: {},
+            success: function (response) {
+                $("#meaning").text(response);
+            }
+           })
+        }
+        
+    </script>
+
+</head>
+<body>
+    <h1>Practice JQuery&Ajax</h1>
+
+    <hr/>
+    <div class="idk">
+        <h2>[Ajax Quiz02] Interesting Facts about Numbers</h2>
+        <p>Every number has a meaning. Let's figure it out!</p>
+        <p>Alert a message if the input box is submitted empty.</p>
+        <input type="number" id="justnum">
+        <button onclick="somethang()">Submit</button>
+        <h5 id="meaning"></h5>
+    </div>
+</body>
+</html>
